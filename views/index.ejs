@@ -29,7 +29,7 @@
       <div class="col-lg-8 col-md-10 mx-auto">
         <% for(let i=0; i< blog.length; i++) { %>
         <div class="post-preview">
-          <a href="#">
+          <a href="/post/<%= blog[i]._id %>">
             <h2 class="post-title">
               <%= blog[i].title %>
             </h2>
