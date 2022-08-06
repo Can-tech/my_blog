@@ -15,8 +15,8 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>Clean Blog</h1>
-            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+            <h1>My Blog Page</h1>
+            <span class="subheading">A Blog website powerd by Node.js/Mongo DB</span>
           </div>
         </div>
       </div>
@@ -37,9 +37,9 @@
               <%= blog[i].content %>
                      </h3>
           </a>
-          <p class="post-meta">Posted by
+          <p class="post-meta" style="color:rgb(143, 143, 143); font-size: 0.8em; text-align: right">Posted by
             <a href="#">Admin</a>
-            on <%= blog[i].date %></p>
+            on <%= blog[i].dateCreated %></p>
         </div>
         <hr>
         <% } %>
