@@ -20,7 +20,8 @@ exports.getAllPosts = async (req, res) => {
         .sort('-dateCreated');
 
         res.render('index', {
-          blog
+          blog,
+          show
         }); 
  
     }
