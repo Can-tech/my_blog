@@ -2,6 +2,7 @@ const express = require('express');
 const methodOverride = require('method-override');
 const { default: mongoose } = require('mongoose');
 
+require('dotenv').config()
 const Blog = require('./models/Blog');
 const path = require('path');
 const postController = require('./controllers/postControllers');
@@ -13,7 +14,7 @@ const pageController = require('./controllers/pageControllers');
 const app = express();
 
 //connect-DB
-mongoose.connect('mongodb+srv://Owner:RuyaMasal11@cluster0.74teier.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect(`mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.74teier.mongodb.net/?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(()=>{
