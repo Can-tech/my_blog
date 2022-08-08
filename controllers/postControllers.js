@@ -11,7 +11,9 @@ exports.getAllPosts = async (req, res) => {
     .limit(nummberOfContent);
 
     res.render('index', {
-      blog
+      blog: blog,
+      show: show
+
     }); 
 
     }else if(show == 'all'){
@@ -20,8 +22,8 @@ exports.getAllPosts = async (req, res) => {
         .sort('-dateCreated');
 
         res.render('index', {
-          blog,
-          show
+          blog: blog,
+          show: show,
         }); 
  
     }
