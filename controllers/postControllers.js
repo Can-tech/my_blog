@@ -1,11 +1,34 @@
 const Blog = require('../models/Blog');
 
 exports.getAllPosts = async (req, res) => {
+    // console.log(req.query);
+    const show = req.query.show || 'latest';
+    const nummberOfContent = 2;
 
-    const blog = await Blog.find({}).sort('-dateCreated');
+    if(show == 'latest'){
+    const blog = await Blog.find({})
+    .sort('-dateCreated')
+    .limit(nummberOfContent);
+
     res.render('index', {
       blog
-    });  
+    }); 
+
+    }else if(show == 'all'){
+      
+        const blog = await Blog.find({})
+        .sort('-dateCreated');
+
+        res.render('index', {
+          blog
+        }); 
+ 
+    }
+
+    // const blog = await Blog.find({}).sort('-dateCreated');
+    //  res.render('index', {
+    //    blog
+    //  });  
   }
 
   exports.getPost = async (req, res) => {

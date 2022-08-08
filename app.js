@@ -13,10 +13,14 @@ const pageController = require('./controllers/pageControllers');
 const app = express();
 
 //connect-DB
-mongoose.connect('mongodb://localhost/clean-blog-db', {
+mongoose.connect('mongodb+srv://Owner:RuyaMasal11@cluster0.74teier.mongodb.net/?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
-});
+}).then(()=>{
+  console.log('DB connected');
+}).catch((err)=>{
+  console.log(err);
+})
 
 //Middleware
 app.use(express.static('public'));
